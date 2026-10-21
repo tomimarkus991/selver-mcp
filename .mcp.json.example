@@ -4,9 +4,7 @@
       "command": "bun",
       "args": ["run", "mcp-server/server.ts"],
       "env": {
-        "SELVER_ID_CODE": "",
-        "SUPABASE_URL": "",
-        "SUPABASE_KEY": ""
+        "SELVER_ID_CODE": ""
       }
     }
   }
