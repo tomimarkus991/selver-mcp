@@ -1,0 +1,12 @@
+{
+  "name": "selver-mcp",
+  "build": { "dockerfile": "Dockerfile" },
+  "remoteUser": "bun",
+  "runArgs": ["--cap-add=NET_ADMIN", "--cap-add=NET_RAW"],
+  "mounts": [
+    "source=selver-mcp-claude-config,target=/home/bun/.claude,type=volume"
+  ],
+  "postCreateCommand": "cd mcp-server && bun install",
+  "postStartCommand": "sudo /usr/local/bin/init-firewall.sh",
+  "waitFor": "postStartCommand"
+}
